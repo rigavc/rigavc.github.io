@@ -1,60 +1,681 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.center {
-  text-align: center;
-  color: red;
-}
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EXC.LV — Premium Domain for Acquisition</title>
+  <meta name="description" content="EXC.LV — a rare three-letter .LV domain. Exclusive. Concise. Available for acquisition." />
+  <meta name="theme-color" content="#f3ead9" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f3ead9'/%3E%3Ctext x='50' y='72' font-size='78' font-family='Georgia,serif' fill='%23a87b36' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f3ead9;
+      --bg-soft: #faf4e6;
+      --ink: #1a1510;
+      --ink-dim: #5c4f3f;
+      --ink-soft: #8a7a64;
+      --gold: #a87b36;
+      --gold-deep: #7a5722;
+      --gold-soft: #c99a4c;
+      --line: rgba(122, 87, 34, 0.22);
+      --line-soft: rgba(122, 87, 34, 0.12);
+      --mx: 50%;
+      --my: 50%;
+    }
 
-.title {
-  color: grey;
-  font-size: 18px;
-}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
+    html { font-size: 17px; }
 
-a {
-  text-decoration: none;
-  font-size: 22px;
-  color: black;
-}
+    html, body {
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-button:hover, a:hover {
-  opacity: 0.7;
-}
-</style>
+    body {
+      position: relative;
+      background:
+        radial-gradient(ellipse 90% 60% at 50% -10%, rgba(168, 123, 54, 0.18), transparent 60%),
+        radial-gradient(ellipse 70% 50% at 50% 110%, rgba(168, 123, 54, 0.1), transparent 55%),
+        linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 45%, var(--bg) 100%);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: clamp(1.25rem, 3.5vw, 2.5rem);
+    }
+
+    #dust {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    #cursorGlow {
+      position: fixed;
+      width: min(95vw, 780px);
+      height: min(95vw, 780px);
+      margin: calc(min(95vw, 780px) / -2) 0 0 calc(min(95vw, 780px) / -2);
+      left: var(--mx);
+      top: var(--my);
+      pointer-events: none;
+      z-index: 1;
+      background: radial-gradient(circle, rgba(168, 123, 54, 0.14) 0%, transparent 66%);
+      opacity: 0;
+      transition: opacity 0.45s ease;
+      will-change: left, top;
+      mix-blend-mode: multiply;
+    }
+
+    body.has-pointer #cursorGlow { opacity: 1; }
+
+    .shell {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 0;
+    }
+
+    header, footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+      font-weight: 500;
+      flex-shrink: 0;
+      gap: 1rem;
+    }
+
+    header .brand { color: var(--gold-deep); font-weight: 600; }
+
+    footer {
+      border-top: 1px solid var(--line-soft);
+      padding-top: 1.1rem;
+      margin-top: auto;
+    }
+
+    footer span { font-size: 0.75rem; }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: clamp(1.5rem, 4vw, 2.5rem) 0;
+    }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+      opacity: 0;
+      animation: fadeUp 0.85s ease-out 0.05s forwards;
+    }
+
+    .eyebrow::before, .eyebrow::after {
+      content: "";
+      display: inline-block;
+      width: clamp(1.5rem, 5vw, 2.75rem);
+      height: 1px;
+      background: var(--gold);
+      vertical-align: middle;
+      margin: 0 clamp(0.5rem, 2vw, 1rem);
+      opacity: 0.7;
+    }
+
+    .wordmark-stage {
+      perspective: 1200px;
+      margin-bottom: 0.5rem;
+    }
+
+    .wordmark {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(4.5rem, 19vw, 13rem);
+      letter-spacing: 0.015em;
+      line-height: 1;
+      transform-style: preserve-3d;
+      transition: transform 0.2s ease-out;
+      color: var(--ink);
+    }
+
+    .wordmark .char {
+      display: inline-block;
+      background: linear-gradient(
+        180deg,
+        var(--ink) 0%,
+        var(--gold-deep) 70%,
+        var(--gold) 100%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .wordmark .char.dot {
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+      color: var(--gold);
+    }
+
+    body.motion-ok .wordmark .char:not(.dot) {
+      opacity: 0;
+      transform: translateY(0.35em);
+      filter: blur(6px);
+      background-image:
+        linear-gradient(
+          105deg,
+          transparent 0%,
+          transparent 40%,
+          rgba(255, 240, 200, 0.55) 50%,
+          transparent 60%,
+          transparent 100%
+        ),
+        linear-gradient(180deg, var(--ink) 0%, var(--gold-deep) 70%, var(--gold) 100%);
+      background-size: 230% 100%, 100% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation:
+        charReveal 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+        shimmerSweep 7s ease-in-out infinite;
+      animation-delay: calc(var(--d, 0) * 0.08s), calc(var(--d, 0) * 0.08s + 0.55s);
+    }
+
+    body.motion-ok .wordmark .char.dot {
+      opacity: 0;
+      transform: translateY(0.35em);
+      animation: charReveal 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: calc(3 * 0.08s);
+    }
+
+    @keyframes charReveal {
+      to { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+
+    @keyframes shimmerSweep {
+      0%, 100% { background-position: 140% 0, 0 0; }
+      45%, 55% { background-position: -40% 0, 0 0; }
+    }
+
+    .tagline {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.2rem, 2.4vw, 1.7rem);
+      color: var(--ink-dim);
+      max-width: 38rem;
+      margin: 0.75rem auto 1.75rem;
+      line-height: 1.45;
+      opacity: 0;
+      animation: fadeUp 0.9s ease-out 0.35s forwards;
+      padding: 0 0.5rem;
+    }
+
+    .tagline em { color: var(--gold-deep); font-style: normal; font-weight: 500; }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem 1.75rem;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.9s ease-out 0.5s forwards;
+    }
+
+    .pill {
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+      font-weight: 500;
+    }
+
+    .pill strong {
+      color: var(--gold-deep);
+      font-weight: 600;
+      margin-right: 0.45rem;
+    }
+
+    .why-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 0.85rem;
+      opacity: 0;
+      animation: fadeUp 0.85s ease-out 0.58s forwards;
+    }
+
+    .why-wrap {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 58rem;
+      width: 100%;
+      margin: 0 auto 2rem;
+      text-align: left;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      opacity: 0;
+      animation: fadeUp 0.9s ease-out 0.65s forwards;
+    }
+
+    .why-col {
+      padding: 1.1rem 0.25rem;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .why-col:last-child { border-bottom: none; }
+
+    @media (min-width: 760px) {
+      .why-wrap { grid-template-columns: 1fr 1fr 1fr; }
+      .why-col {
+        border-bottom: none;
+        border-right: 1px solid var(--line-soft);
+        padding: 1.1rem 1.5rem;
+      }
+      .why-col:last-child { border-right: none; }
+    }
+
+    .why-num {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      margin-bottom: 0.5rem;
+    }
+
+    .why-head {
+      font-size: 0.9rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.55rem;
+    }
+
+    .why-body {
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: var(--ink-dim);
+      font-weight: 400;
+    }
+
+    .why-body em {
+      color: var(--gold-deep);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 1.1rem 2.1rem;
+      background: transparent;
+      border: 1.5px solid var(--gold-deep);
+      color: var(--gold-deep);
+      text-decoration: none;
+      font-size: 0.88rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: background 0.35s ease, color 0.35s ease, letter-spacing 0.35s ease, box-shadow 0.35s ease;
+      opacity: 0;
+      animation: fadeUp 0.9s ease-out 0.78s forwards;
+      min-height: 48px;
+    }
+
+    .cta:hover, .cta:focus-visible {
+      background: var(--gold-deep);
+      color: var(--bg-soft);
+      letter-spacing: 0.3em;
+      box-shadow: 0 10px 30px -10px rgba(122, 87, 34, 0.55);
+      outline: none;
+    }
+
+    .cta svg { width: 16px; height: 16px; transition: transform 0.35s ease; flex-shrink: 0; }
+    .cta:hover svg, .cta:focus-visible svg { transform: translateX(4px); }
+
+    .contact-note {
+      margin-top: 1.1rem;
+      font-size: 0.88rem;
+      color: var(--ink-dim);
+      letter-spacing: 0.04em;
+      opacity: 0;
+      animation: fadeUp 0.9s ease-out 0.9s forwards;
+    }
+
+    #emailLink {
+      color: var(--gold-deep);
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      cursor: pointer;
+      padding: 0.2rem 0.15rem;
+      transition: border-color 0.25s, color 0.25s;
+    }
+
+    #emailLink:hover, #emailLink:focus-visible {
+      border-color: var(--gold-deep);
+      color: var(--ink);
+      outline: none;
+    }
+
+    #copyToast {
+      display: inline-block;
+      margin-left: 0.5rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-deep);
+      font-weight: 600;
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: opacity 0.25s, transform 0.25s;
+    }
+
+    #copyToast.show { opacity: 1; transform: translateX(0); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .eyebrow, .tagline, .pills, .why-label, .why-wrap, .cta, .contact-note {
+        animation: none !important; opacity: 1 !important; transform: none !important;
+      }
+      .wordmark .char,
+      body.motion-ok .wordmark .char:not(.dot),
+      body.motion-ok .wordmark .char.dot {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+      }
+    }
+
+    @media (max-width: 560px) {
+      html { font-size: 16px; }
+      body { padding: 1.1rem 1rem; }
+      header, footer { font-size: 0.7rem; letter-spacing: 0.18em; }
+      .eyebrow { font-size: 0.72rem; letter-spacing: 0.34em; margin-bottom: 1rem; }
+      .eyebrow::before, .eyebrow::after { width: 1.25rem; margin: 0 0.5rem; }
+      .tagline { font-size: 1.1rem; margin: 0.6rem auto 1.35rem; max-width: 28rem; }
+      .pills { gap: 0.4rem 1.1rem; margin-bottom: 1.6rem; }
+      .pill { font-size: 0.72rem; letter-spacing: 0.14em; }
+      .why-label { font-size: 0.68rem; letter-spacing: 0.32em; }
+      .why-body { font-size: 0.92rem; }
+      .why-head { font-size: 0.85rem; }
+      .cta { font-size: 0.8rem; padding: 1rem 1.6rem; letter-spacing: 0.22em; }
+      .cta:hover, .cta:focus-visible { letter-spacing: 0.24em; }
+      .contact-note { font-size: 0.82rem; }
+    }
+
+    @media (max-width: 380px) {
+      .pills { flex-direction: column; gap: 0.35rem; }
+    }
+  </style>
 </head>
 <body>
+  <canvas id="dust" aria-hidden="true"></canvas>
+  <div id="cursorGlow" aria-hidden="true"></div>
 
-<h2 style="text-align:center">Domain for sell</h2>
+  <div class="shell">
+    <header>
+      <span class="brand">EXC.LV</span>
+      <span>Private Sale</span>
+    </header>
 
-<div class="card">
-  <img src="photo.png" alt="John" style="width:100%">
-  <h1>EXCLUSIVE DOMAIN</h1>
-  <h1 class="center">EXC.LV</h1>
-  <p>How to contact Owner:</p>
-  <a href = "mailto:rigavc@gmail.com?subject=I want to buy EXC.LV domain name!"><p><button>Send Email</button></p></a>
-</div>
+    <main>
+      <div class="eyebrow">For Acquisition</div>
 
+      <div class="wordmark-stage" id="wordmarkStage">
+        <h1 class="wordmark" id="wordmarkTilt" aria-label="exc dot lv">
+          <span class="char" style="--d:0">e</span><span class="char" style="--d:1">x</span><span class="char" style="--d:2">c</span><span class="char dot" style="--d:3">.</span><span class="char" style="--d:4">l</span><span class="char" style="--d:5">v</span>
+        </h1>
+      </div>
+
+      <p class="tagline">
+        A rare three-letter domain. <em>Exclusive</em> by name, by length, by nature —
+        a foundation for a brand built on excellence.
+      </p>
+
+      <div class="pills">
+        <div class="pill"><strong>03</strong>Letters</div>
+        <div class="pill"><strong>.LV</strong>Latvia TLD</div>
+        <div class="pill"><strong>EST.</strong>Long-held</div>
+        <div class="pill"><strong>1/1</strong>One of One</div>
+      </div>
+
+      <div class="why-label">Why EXC.LV</div>
+      <div class="why-wrap">
+        <div class="why-col">
+          <div class="why-num">I</div>
+          <div class="why-head">Rare</div>
+          <p class="why-body">Three-letter domains are finite; a .lv combination that spells a real English word is a vanishingly small slice of that pool.</p>
+        </div>
+        <div class="why-col">
+          <div class="why-num">II</div>
+          <div class="why-head">Meaningful</div>
+          <p class="why-body"><em>exc</em> echoes exclusive, excellence, and executive — the dot reads naturally so the whole string feels like one premium word.</p>
+        </div>
+        <div class="why-col">
+          <div class="why-num">III</div>
+          <div class="why-head">Brand-ready</div>
+          <p class="why-body">Private banking, concierge, members-only platforms, luxury retail, or a personal executive brand — short enough for cards, monograms, and voice.</p>
+        </div>
+      </div>
+
+      <a class="cta" href="mailto:rigavc@gmail.com?subject=Inquiry%3A%20EXC.LV%20Domain%20Acquisition&amp;body=Hello%2C%0A%0AI%20am%20interested%20in%20acquiring%20the%20EXC.LV%20domain.%20Please%20find%20my%20details%20below%3A%0A%0AName%3A%0ACompany%3A%0AOffer%20%28EUR%20%2F%20USD%29%3A%0ATimeline%3A%0A%0AThank%20you.">
+        Submit an Offer
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+
+      <p class="contact-note">
+        Serious inquiries only ·
+        <a id="emailLink" href="mailto:rigavc@gmail.com" title="Click to copy address" tabindex="0">rigavc@gmail.com</a>
+        <span id="copyToast" aria-live="polite">Copied</span>
+      </p>
+    </main>
+
+    <footer>
+      <span>© EXC.LV</span>
+      <span>Riga · Latvia</span>
+    </footer>
+  </div>
+
+  <script>
+(function () {
+  var mqReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var mqHover = window.matchMedia("(hover: hover) and (pointer: fine)");
+  var body = document.body;
+  var dust = document.getElementById("dust");
+  var tilt = document.getElementById("wordmarkTilt");
+  var stage = document.getElementById("wordmarkStage");
+  var emailLink = document.getElementById("emailLink");
+  var copyToast = document.getElementById("copyToast");
+
+  function motionOk() { return !mqReduce.matches; }
+  if (motionOk()) body.classList.add("motion-ok");
+
+  mqReduce.addEventListener("change", function () {
+    if (motionOk()) body.classList.add("motion-ok");
+    else body.classList.remove("motion-ok");
+  });
+
+  var rafGlow = 0;
+  var lx = innerWidth * 0.5, ly = innerHeight * 0.35;
+  function setGlow(x, y) {
+    lx = x; ly = y;
+    if (rafGlow) return;
+    rafGlow = requestAnimationFrame(function () {
+      rafGlow = 0;
+      body.style.setProperty("--mx", lx + "px");
+      body.style.setProperty("--my", ly + "px");
+    });
+  }
+
+  document.addEventListener("mousemove", function (e) {
+    if (!motionOk()) return;
+    body.classList.add("has-pointer");
+    setGlow(e.clientX, e.clientY);
+  });
+
+  document.addEventListener("mouseleave", function (e) {
+    if (!e.relatedTarget) body.classList.remove("has-pointer");
+  });
+
+  var maxTilt = 5;
+  function onTilt(e) {
+    if (!motionOk() || !mqHover.matches || !tilt || !stage) return;
+    var r = stage.getBoundingClientRect();
+    var px = (e.clientX - r.left) / r.width - 0.5;
+    var py = (e.clientY - r.top) / r.height - 0.5;
+    var rx = (-py * maxTilt * 2).toFixed(2);
+    var ry = (px * maxTilt * 2).toFixed(2);
+    tilt.style.transform = "rotateX(" + rx + "deg) rotateY(" + ry + "deg)";
+  }
+
+  function resetTilt() { if (tilt) tilt.style.transform = ""; }
+
+  if (stage) {
+    stage.addEventListener("mousemove", onTilt);
+    stage.addEventListener("mouseleave", resetTilt);
+  }
+
+  var particles = [];
+  var running = false;
+  var ctx = dust && dust.getContext && dust.getContext("2d");
+
+  function resizeDust() {
+    if (!dust) return;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    dust.width = Math.floor(innerWidth * dpr);
+    dust.height = Math.floor(innerHeight * dpr);
+    dust.style.width = innerWidth + "px";
+    dust.style.height = innerHeight + "px";
+    if (ctx) ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function initParticles() {
+    particles = [];
+    var n = Math.min(42, Math.floor((innerWidth * innerHeight) / 40000));
+    for (var i = 0; i < n; i++) {
+      particles.push({
+        x: Math.random() * innerWidth,
+        y: Math.random() * innerHeight,
+        r: 0.4 + Math.random() * 1.2,
+        vx: (Math.random() - 0.5) * 0.1,
+        vy: (Math.random() - 0.5) * 0.1,
+        a: 0.08 + Math.random() * 0.14
+      });
+    }
+  }
+
+  function tick() {
+    if (!running || !ctx || !motionOk()) return;
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < -10) p.x = innerWidth + 10;
+      if (p.x > innerWidth + 10) p.x = -10;
+      if (p.y < -10) p.y = innerHeight + 10;
+      if (p.y > innerHeight + 10) p.y = -10;
+      ctx.beginPath();
+      ctx.fillStyle = "rgba(168, 123, 54, " + p.a + ")";
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function startDust() {
+    if (!ctx || !motionOk()) return;
+    resizeDust();
+    initParticles();
+    running = document.visibilityState === "visible";
+    if (running) requestAnimationFrame(tick);
+  }
+
+  function stopDust() {
+    running = false;
+    if (ctx) ctx.clearRect(0, 0, innerWidth, innerHeight);
+  }
+
+  window.addEventListener("resize", function () { resizeDust(); initParticles(); });
+
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState !== "visible") stopDust();
+    else if (motionOk()) { running = true; requestAnimationFrame(tick); }
+  });
+
+  if (ctx && motionOk()) startDust();
+
+  mqReduce.addEventListener("change", function () {
+    if (motionOk()) { body.classList.add("motion-ok"); startDust(); }
+    else { body.classList.remove("motion-ok"); stopDust(); }
+  });
+
+  var toastTimer;
+  function showToast() {
+    copyToast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { copyToast.classList.remove("show"); }, 1600);
+  }
+
+  function copyEmail(e) {
+    if (e.type === "click" && (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button === 1)) return;
+    e.preventDefault();
+    var addr = "rigavc@gmail.com";
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(addr).then(showToast).catch(function () { showToast(); });
+    } else {
+      var ta = document.createElement("textarea");
+      ta.value = addr;
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); showToast(); } catch (err) {}
+      document.body.removeChild(ta);
+    }
+  }
+
+  if (emailLink) {
+    emailLink.addEventListener("click", copyEmail);
+    emailLink.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); copyEmail(e); }
+    });
+  }
+})();
+  </script>
 </body>
 </html>

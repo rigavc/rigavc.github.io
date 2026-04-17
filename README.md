@@ -1,2 +1,3 @@
 # exclv
-MyWebSite
+
+Landing page for **exc.lv** — private domain sale (GitHub Pages).
